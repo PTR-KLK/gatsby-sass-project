@@ -1,26 +1,13 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
 
-import Container from 'components/Container';
-
-const Header = () => {
+const Header = ({showNavbar}) => {
   return (
     <header>
-      <Container>
-        <p>
-          My Gatsby Site
-        </p>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page-2/">Page 2</Link>
-          </li>
-        </ul>
-      </Container>
+        <button onClick={showNavbar}>Menu</button>
+        <p>My Gatsby Site</p>
     </header>
   );
 };
 
 export default Header;
+

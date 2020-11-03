@@ -27,11 +27,6 @@ const IndexPage = () => {
         <p>
           Run the following in your terminal!
         </p>
-        <pre>
-          <code>
-            gatsby new [directory] https://github.com/colbyfayock/gatsby-starter-sass
-          </code>
-        </pre>
       </Container>
     </Layout>
   );

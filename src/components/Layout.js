@@ -1,37 +1,40 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 
-import 'assets/stylesheets/application.scss';
+import "assets/stylesheets/application.scss";
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Navbar from "components/Navbar";
+import Footer from "components/Footer";
+import Header from "components/Header";
 
 const Layout = ({ children, pageName }) => {
+  const [navbarVisible, setnavbarVisible] = useState(false);
+  let className = "";
 
-  let className = '';
-
-  if ( pageName ) {
+  if (pageName) {
     className = `${className} page-${pageName}`;
   }
 
+  const showNavbar = () => setnavbarVisible(!navbarVisible);
+
   return (
     <>
-      <Helmet bodyAttributes={{ class: className}}>
+      <Helmet bodyAttributes={{ class: className }}>
         <title>Gatsby Site</title>
       </Helmet>
       <div className="wrapper">
-        <Header />
-        <main>{ children }</main>
+        <Header showNavbar={showNavbar} />
+        <Navbar navbarVisible={navbarVisible} />
+        <main>{children}</main>
         <Footer />
       </div>
     </>
   );
-
 };
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
 export default Layout;

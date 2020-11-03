@@ -1,0 +1,67 @@
+nav {
+  height: 100%;
+  position: fixed;
+  z-index: 11;
+  color: white;
+  background-color: rebeccapurple;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 4em;
+    line-height: 4em;
+  }
+
+  ul {
+    list-style: none;
+    margin: 3.25em 0 0;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+    text-align: center;
+    padding: 0 3em;
+  }
+
+  a {
+    display: block;
+    color: white;
+    opacity: .8;
+  }
+
+  p {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    height: initial;
+    position: static;
+
+    p {
+      display: block;
+      font-size: 2em;
+      font-weight: bold;
+      margin: 0 auto;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+
+}
+
+.visible {
+  display: block;
+}
+
+.invisible {
+
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}

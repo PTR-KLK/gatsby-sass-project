@@ -1,37 +1,49 @@
 header {
-
   width: 100%;
+  position: fixed;
+  z-index: 22;
+  display: flex;
   color: white;
   background-color: rebeccapurple;
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    height: 4em;
-    line-height: 4em;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-  }
-
-  a {
-    display: block;
-    color: white;
-    opacity: .8;
-    padding: 0 .5em;
-  }
+  padding: 0.5em 0;
+  line-height: 1.5em;
 
   p {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
-    margin: 0;
+    margin: 0 auto;
+    position: absolute;
+    white-space: nowrap;
+    left: 50%;
+    top: 0.25em;
+    transform: translate(-50%);
   }
 
+  button {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    border-radius: 0.25em;
+    margin-left: .5em;
+    text-decoration: underline;
+    font-size: 1em;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+    line-height: 2em;
+
+    p {
+      font-size: 2em;
+      position: static;
+      white-space: normal;
+      left: auto;
+      top: auto;
+      transform: none;
+    }
+
+    button {
+      margin-left: 1em;
+    }
+  }
 }
