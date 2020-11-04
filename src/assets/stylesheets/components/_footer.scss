@@ -1,10 +1,26 @@
 footer {
-  
   height: 3em;
   line-height: 1em;
+  position: relative;
   text-align: center;
-  border-top: 1px solid rebeccapurple;
-  margin: 0 1em;
+  border-top: 1px solid transparent;
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: -1px;
+    right: 0;
+    z-index: -1;
+    background: linear-gradient(
+      to right,
+      #f8f7ff,
+      rgba(39, 39, 39, 0.2) 5%,
+      rgba(39, 39, 39, 0.2) 95%,
+      #f8f7ff
+    );
+  }
 
   p {
     font-size: 1em;
@@ -13,8 +29,11 @@ footer {
   }
 
   @media (min-width: 768px) {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
   }
 
+  @media (min-width: 1024px) {
+    grid-column: 2 / 3;
+  }
 }

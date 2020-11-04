@@ -1,13 +1,12 @@
 import React from "react";
 
-const Header = ({showNavbar}) => {
+const Header = () => {
   return (
     <header>
-        <button onClick={showNavbar}>Menu</button>
-        <p>My Gatsby Site</p>
+      <h2>My Gatsby Site</h2>
+      <p>Welcome to your new Gatsby site.</p>
     </header>
   );
 };
 
 export default Header;
-

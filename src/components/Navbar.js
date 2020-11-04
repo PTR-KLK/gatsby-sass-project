@@ -1,15 +1,12 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import { Link } from "gatsby";
 
-import Container from 'components/Container';
+import Container from "components/Container";
 
-const Navbar = ( {navbarVisible} ) => {
+const Navbar = ({ navbarVisible }) => {
   return (
     <nav className={navbarVisible ? "visible" : "invisible"}>
       <Container>
-        <p>
-          My Gatsby Site
-        </p>
         <ul>
           <li>
             <Link to="/">Home</Link>
