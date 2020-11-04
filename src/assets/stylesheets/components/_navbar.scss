@@ -1,19 +1,19 @@
+@import "../colors";
+@import "../screen-sizes";
+
 nav {
   height: 100%;
   width: 100%;
   position: fixed;
   z-index: 11;
-  background: rgba(248, 247, 255, 0.9);
+  background: $primary-light-transparent;
+  font-size: 2rem;
 
-  .container {
+  ul {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
-    line-height: 3em;
-  }
-
-  ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -22,31 +22,36 @@ nav {
   li {
     display: block;
     text-align: center;
-    padding: 0 3em;
+    padding: 1rem 0;
   }
 
   a {
-    display: block;
-    opacity: 0.8;
+    color: inherit;
+    text-decoration: none;
   }
 
-  @media (min-width: 768px) {
+  a:hover {
+    color: $accent;
+  }
+
+  @media (min-width: $tablet) {
     height: initial;
     position: static;
     background: inherit;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
+    font-size: 1rem;
 
-    .container {
+    ul {
       justify-content: flex-start;
     }
 
-    ul {
-      margin: 0;
+    li {
+      padding: 0.5rem 0;
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: $laptop) {
     grid-column: 2 / 3;
   }
 }
@@ -58,7 +63,7 @@ nav {
 .invisible {
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: $tablet) {
     display: block;
   }
 }

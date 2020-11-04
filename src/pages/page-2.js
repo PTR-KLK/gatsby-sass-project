@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Layout from 'components/Layout';
-import Container from 'components/Container';
 
 const SecondPage = () => {
   return (
@@ -10,10 +9,8 @@ const SecondPage = () => {
       <Helmet>
         <title>Page Two</title>
       </Helmet>
-      <Container>
-        <h1>Page Two</h1>
-        <p>Welcome to page 2</p>
-      </Container>
+      <h1>Page Two</h1>
+      <p>Welcome to page 2</p>
     </Layout>
   );
 };

@@ -1,24 +1,30 @@
+@import "../colors";
+@import "../screen-sizes";
+
 footer {
   height: 3em;
   line-height: 1em;
   position: relative;
   text-align: center;
-  border-top: 1px solid transparent;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: transparent;
 
   &:before {
     content: "";
     position: absolute;
     height: 1px;
-    width: 100%;
+    width: calc(100% - 2em);
     top: -1px;
     right: 0;
+    margin: 0 1em;
     z-index: -1;
     background: linear-gradient(
       to right,
-      #f8f7ff,
-      rgba(39, 39, 39, 0.2) 5%,
-      rgba(39, 39, 39, 0.2) 95%,
-      #f8f7ff
+      $primary-light,
+      $primary-dark-transparent 5%,
+      $primary-dark-transparent 95%,
+      $primary-light
     );
   }
 
@@ -28,12 +34,12 @@ footer {
     margin: 0;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: $tablet) {
     grid-row: 3 / 4;
     grid-column: 1 / 2;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: $laptop) {
     grid-column: 2 / 3;
   }
 }

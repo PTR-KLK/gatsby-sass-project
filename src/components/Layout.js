@@ -24,7 +24,7 @@ const Layout = ({ children, pageName }) => {
         <title>Gatsby Site</title>
       </Helmet>
       <div className="wrapper">
-        <button onClick={showNavbar}>Menu</button>
+        <button onClick={showNavbar}>☰</button>
         <Header />
         <Navbar navbarVisible={navbarVisible} />
         <main>{children}</main>
