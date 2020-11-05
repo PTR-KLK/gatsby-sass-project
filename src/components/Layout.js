@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
 
 import "assets/stylesheets/application.scss";
 
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 import Header from "components/Header";
+import Seo from "components/Seo";
 
-const Layout = ({ children, pageName }) => {
+const Layout = ({ children, pageName, title, description }) => {
   const [navbarVisible, setnavbarVisible] = useState(false);
   let className = "";
 
@@ -20,9 +20,11 @@ const Layout = ({ children, pageName }) => {
 
   return (
     <>
-      <Helmet bodyAttributes={{ class: className }}>
-        <title>Gatsby Site</title>
-      </Helmet>
+      <Seo
+        bodyAttributes={{ class: className }}
+        title={title}
+        description={description}
+      />
       <div className="wrapper">
         <button onClick={showNavbar}>☰</button>
         <Header />
