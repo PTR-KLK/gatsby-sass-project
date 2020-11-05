@@ -18,6 +18,19 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby Site`,
+        short_name: `GatsbySite`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/assets/images/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
