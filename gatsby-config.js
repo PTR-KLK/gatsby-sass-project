@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/gatsby-sass-project",
   siteMetadata: {
     title: "Gatsby Site",
     description:
