@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-const SEO = ({ bodyAttributes ,title, description }) => {
+const SEO = ({ title, description }) => {
   const { site } = useStaticQuery(query);
 
   const { defaultTitle, defaultDescription } = site.siteMetadata;
@@ -14,7 +14,7 @@ const SEO = ({ bodyAttributes ,title, description }) => {
   };
 
   return (
-    <Helmet title={seo.title} bodyAttributes={bodyAttributes}>
+    <Helmet title={seo.title}>
       <meta name="description" content={seo.description} />
       {seo.title && <meta property="og:title" content={seo.title} />}
       {seo.description && (

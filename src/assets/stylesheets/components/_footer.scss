@@ -2,7 +2,8 @@
 @import "../screen-sizes";
 
 footer {
-  height: 3em;
+  height: calc(100%+1px);
+  padding: 1em;
   line-height: 1em;
   position: relative;
   text-align: center;
@@ -19,18 +20,11 @@ footer {
     right: 0;
     margin: 0 1em;
     z-index: -1;
-    background: linear-gradient(
-      to right,
-      $primary-light,
-      $primary-dark-transparent 5%,
-      $primary-dark-transparent 95%,
-      $primary-light
-    );
   }
 
   p {
     font-size: 1em;
-    padding: 1em 0;
+    padding: 1em 0 0;
     margin: 0;
   }
 
@@ -41,5 +35,29 @@ footer {
 
   @media (min-width: $laptop) {
     grid-column: 2 / 3;
+  }
+}
+
+body.dark-mode footer {
+  &:before {
+    background: linear-gradient(
+      to right,
+      $primary-dark,
+      $primary-light-transparent 15%,
+      $primary-light-transparent 85%,
+      $primary-dark
+    );
+  }
+}
+
+body.light-mode footer {
+  &:before {
+    background: linear-gradient(
+      to right,
+      $primary-light,
+      $primary-dark-transparent 15%,
+      $primary-dark-transparent 85%,
+      $primary-light
+    );
   }
 }

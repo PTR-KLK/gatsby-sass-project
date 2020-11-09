@@ -12,6 +12,7 @@ module.exports = {
     'gatsby-plugin-resolve-src',
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-use-dark-mode',
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {

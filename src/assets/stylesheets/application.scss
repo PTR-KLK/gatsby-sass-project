@@ -5,10 +5,46 @@
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background: $primary-light;
-  color: $primary-dark;
   padding: 0;
   margin: 0;
+}
+
+body.dark-mode{
+  background: $primary-dark;
+  color: $primary-light;
+
+  main {
+    @media (min-width: $tablet) {
+      &:before {
+        background: linear-gradient(
+          to bottom,
+          $primary-dark,
+          $primary-light-transparent 15%,
+          $primary-light-transparent 85%,
+          $primary-dark
+        );
+      }
+    }
+  }
+}
+
+body.light-mode{
+  background: $primary-light;
+  color: $primary-dark;
+
+  main {
+    @media (min-width: $tablet) {
+      &:before {
+        background: linear-gradient(
+          to bottom,
+          $primary-light,
+          $primary-dark-transparent 15%,
+          $primary-dark-transparent 85%,
+          $primary-light
+        );
+      }
+    }
+  }
 }
 
 a {
@@ -80,13 +116,6 @@ main {
       top: 0;
       left: -1px;
       z-index: -1;
-      background: linear-gradient(
-        to bottom,
-        $primary-light,
-        $primary-dark-transparent 5%,
-        $primary-dark-transparent 95%,
-        $primary-light
-      );
     }
   }
 
