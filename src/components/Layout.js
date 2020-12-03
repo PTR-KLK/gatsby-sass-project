@@ -11,7 +11,8 @@ import Seo from "components/Seo";
 
 const Layout = ({ children, pageName, title, description }) => {
   const [navbarVisible, setnavbarVisible] = useState(false);
-  const darkMode = useDarkMode(false);
+  const isDarkMode = window.matchMedia && window.matchMedia('prefers-color-scheme: dark').matches;
+  const darkMode = useDarkMode(isDarkMode);
 
   useEffect(() => {
     document.body.classList.add(`page-${pageName}`);
